@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+select,
+button {
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  transition: color 0.25s ease;
+  text-decoration: none;
+  color: #ffffff;
+
+  &:hover {
+    color: #757f9a;
+  }
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+main {
+  width: 100%;
+}

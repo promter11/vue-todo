@@ -1,31 +1,58 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <nav class="nav">
+      <router-link
+        class="nav__link"
+        exact-active-class="nav__link--exact"
+        to="/"
+      >
+        Home
+      </router-link>
+      <router-link
+        class="nav__link"
+        exact-active-class="nav__link--exact"
+        to="/about"
+      >
+        About
+      </router-link>
+      <router-link
+        class="nav__link"
+        exact-active-class="nav__link--exact"
+        to="/photos"
+      >
+        Photos
+      </router-link>
+    </nav>
+    <main class="main">
+      <router-view />
+    </main>
   </div>
 </template>
 
 <style lang="scss">
+@import "./main.scss";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 15px;
+  background: linear-gradient(to left, #d7dde8, #757f9a);
 }
 
-#nav {
-  padding: 30px;
+.nav {
+  margin-bottom: 40px;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  &__link {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
 
-    &.router-link-exact-active {
-      color: #42b983;
+    &--exact {
+      font-weight: bold;
+      color: #757f9a;
     }
   }
 }
